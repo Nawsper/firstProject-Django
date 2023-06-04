@@ -16,9 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import saludo
+from .views import inicio, nosotros, productos, contacto  # , notFound
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', saludo)
+    path('michistore/', inicio),
+    path('nosotros/', nosotros),
+    path('productos/', productos),
+    path('contacto/', contacto),
+    # path('*', notFound)
+
 ]

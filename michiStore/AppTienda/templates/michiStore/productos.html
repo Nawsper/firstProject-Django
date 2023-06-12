@@ -1,9 +1,9 @@
-{% extends "base.html" %} {% block title %}Productos{% endblock %} {% block
-content %}
+{% extends "base.html" %} {% block title %}Productos{% endblock title %} {%
+block main %}
 
-<div class="itemListContainer">
-  <h2 class="itemListContainer__h2">MichiProductos</h2>
-  <div class="itemListContainer__div">
+<div class="productos">
+  <h2 class="productos__h2">MichiProductos</h2>
+  <div class="productos__div">
     <div class="card">
       <img class="card__img" src="#" alt="title" />
       <h5 class="card__h5">Title</h5>
@@ -13,3 +13,5 @@ content %}
     </div>
   </div>
 </div>
+
+{% endblock main %}

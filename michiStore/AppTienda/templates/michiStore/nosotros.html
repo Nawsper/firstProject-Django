@@ -1,8 +1,12 @@
-{% extends "base.html" %} {% block title %}Nosotros{% endblock %} {% block
-content %}
+{% extends "base.html" %} {% block title %}Nosotros{% endblock title %} {% block
+main %}
 
 <div class="presentNos">
-  <img class="presentNos__img" src="/img/nosotros.jpg" alt="siluetas gatos" />
+  <img
+    class="presentNos__img"
+    src='{% static "../../static/AppTienda/assets/img/nosotros.jpg" %}'
+    alt="siluetas gatos"
+  />
   <div class="presentNos__container">
     <h2 class="presentNos__container--h2">MichiStaff</h2>
     <p class="presentNos__container--p">
@@ -19,3 +23,5 @@ content %}
     </p>
   </div>
 </div>
+
+{% endblock main %}

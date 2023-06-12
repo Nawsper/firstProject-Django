@@ -55,7 +55,7 @@ ROOT_URLCONF = 'michiStore.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['./michiStore/templates/michiStore'],
+        'DIRS': ['./AppTienda/templates/michiStore'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

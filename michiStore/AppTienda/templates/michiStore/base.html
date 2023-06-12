@@ -1,10 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    {% load static %}
     <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      href='{% static "../../static/AppTienda/assets/img/favicon.png" %}'
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %}{% endblock %}</title>
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alkatra&family=Roboto:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- css -->
+    <link
+      rel="stylesheet"
+      href='{% static"/michiStore/AppTienda/static/AppTienda/css/style.css" %}'
+    />
+    <title>{% block title %}{% endblock title %}</title>
   </head>
   <body>
     <div class="container">
@@ -13,7 +35,7 @@
         <div class="header__div">
           <img
             class="header__div--presentacion"
-            src="/img/presentacion.png"
+            src='{% static "../../static/AppTienda/assets/img/presentacion.png" %}'
             alt="bigotes gato"
           />
         </div>
@@ -22,7 +44,7 @@
           <div class="header__nav--div">
             <img
               class="header__nav--div__logo"
-              src="/img/logo.png"
+              src='{% static "../../static/AppTienda/assets/img/logo.png" %}'
               alt="logo"
             />
             <h1><a class="header__nav--div__h1">Michi Shop</a></h1>
@@ -53,7 +75,7 @@
       </header>
       <!-- main -->
 
-      {% block content %} {% endblock %}
+      {% block main %} {% endblock main %}
 
       <!-- footer -->
       <footer>

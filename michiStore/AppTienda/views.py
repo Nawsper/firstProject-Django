@@ -16,3 +16,12 @@ def productos(request):
 
 def contacto(request):
     return render(request, "contacto.html")
+
+
+def busqueda_productos(request):
+    return render(request, "busquedaProd.html")
+
+
+def buscar(request):
+    msj = "Articulo buscado: %r" % request.GET["prod"]
+    return HttpResponse(msj)

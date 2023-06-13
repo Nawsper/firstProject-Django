@@ -1,0 +1,18 @@
+{%extends 'base.html'%}{%block title%}Busqueda Productos{%endblock title%}
+
+<!-- contenido busqueda -->
+
+{% block main %}
+
+<section class="busqueda">
+  <h2 class="busqueda__h2">Busqueda de productos</h2>
+  <p class="busqueda__p">Encuentra todo tipo de productos</p>
+  <div class="busqueda__div">
+    <form action="/buscar/" method="get">
+      <input type="text" name="prod" />
+      <input type="submit" value="buscar" />
+    </form>
+  </div>
+</section>
+
+{% endblock main %}

@@ -410,9 +410,13 @@ a {
 }
 
 /* footer */
+.footer {
+  padding: 2rem;
+  font-family: "Roboto", sans-serif;
+}
 
 .footer__h6 {
-  font-size: 60px;
+  font-size: 30px;
 }
 .footer__link {
   color: var(--fontDark);
@@ -420,8 +424,4 @@ a {
 
 .footer__link:hover {
   opacity: 0.5;
-}
-
-.footer__p {
-  color: var(--fontLight);
 }

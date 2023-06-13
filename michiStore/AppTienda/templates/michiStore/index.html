@@ -1,9 +1,13 @@
-{% extends 'base.html' %} {% load static %} {% block title %} MichiStore {%
-endblock title %} {% block main %}
+{% extends 'base.html' %} {% block title%}MichiStore{%endblock title %}
+
+<!-- contenido inicio -->
+
+{% block main %}
+
 <div class="presentacion">
   <img
     class="presentacion__img"
-    src='{% static "../../static/AppTienda/assets/img/inicio.jpg" %}'
+    src="../../static/AppTienda/assets/img/inicio.jpg"
     alt="silueta gato"
   />
   <div class="presentacion__container">
@@ -20,4 +24,5 @@ endblock title %} {% block main %}
     </p>
   </div>
 </div>
+
 {% endblock main %}

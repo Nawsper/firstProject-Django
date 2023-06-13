@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <link
       rel="icon"
-      href='{% static "../../static/AppTienda/assets/img/favicon.png" %}'
+      type="image/x-icon"
+      href="../../static/AppTienda/assets/img/favicon.png"
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,10 +23,7 @@
       rel="stylesheet"
     />
     <!-- css -->
-    <link
-      rel="stylesheet"
-      href='{% static"/michiStore/AppTienda/static/AppTienda/css/style.css" %}'
-    />
+    <link href="../../static/AppTienda/css/style.css" rel="stylesheet" />
     <title>{% block title %}{% endblock title %}</title>
   </head>
   <body>
@@ -35,7 +33,7 @@
         <div class="header__div">
           <img
             class="header__div--presentacion"
-            src='{% static "../../static/AppTienda/assets/img/presentacion.png" %}'
+            src="../../static/AppTienda/assets/img/presentacion.png"
             alt="bigotes gato"
           />
         </div>
@@ -44,28 +42,42 @@
           <div class="header__nav--div">
             <img
               class="header__nav--div__logo"
-              src='{% static "../../static/AppTienda/assets/img/logo.png" %}'
+              src="../../static/AppTienda/assets/img/logo.png"
               alt="logo"
             />
-            <h1><a class="header__nav--div__h1">Michi Shop</a></h1>
+            <h1>
+              <a class="header__nav--div__h1" href="{% url 'inicio' %}"
+                >Michi Shop</a
+              >
+            </h1>
           </div>
           <nav class="header__nav--menu">
             <ul class="header__nav--menu__ul">
               <li>
-                <a class="header__nav--menu__ul--li inicio" href="#">Inicio</a>
+                <a
+                  class="header__nav--menu__ul--li inicio"
+                  href="{% url 'inicio' %}"
+                  >Inicio</a
+                >
               </li>
               <li>
-                <a class="header__nav--menu__ul--li nosotros" href="#"
+                <a
+                  class="header__nav--menu__ul--li nosotros"
+                  href="{% url 'nosotros' %}"
                   >Nosotros</a
                 >
               </li>
               <li>
-                <a class="header__nav--menu__ul--li productos" href="#"
+                <a
+                  class="header__nav--menu__ul--li productos"
+                  href="{% url 'productos' %}"
                   >Productos</a
                 >
               </li>
               <li>
-                <a class="header__nav--menu__ul--li contacto" href="#"
+                <a
+                  class="header__nav--menu__ul--li contacto"
+                  href="{% url 'contacto' %}"
                   >Contacto</a
                 >
               </li>
@@ -74,15 +86,13 @@
         </div>
       </header>
       <!-- main -->
-
-      {% block main %} {% endblock main %}
-
+      <main>{% block main %} {% endblock main %}</main>
       <!-- footer -->
       <footer>
-        <div>
+        <div class="footer">
           <!-- Iconos Contacto -->
           <div class="footer__div">
-            <div class="titulos">
+            <div class="footer__titulos">
               <h6 class="footer__h6">Seguinos en nuestras Redes Sociales</h6>
               <a class="footer__link" href="#" target="_blank">Instagram</a>
               <a class="footer__link" href="#" target="_blank">Facebook</a>

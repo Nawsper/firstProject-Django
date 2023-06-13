@@ -1,11 +1,11 @@
 from django.urls import path
-from .views import inicio, nosotros, productos, contacto  # , notFound
+from AppTienda import views
 
 urlpatterns = [
-    path('', inicio),
-    path('nosotros/', nosotros),
-    path('productos/', productos),
-    path('contacto/', contacto),
-    # path('*', notFound)
+    path('', views.inicio, name='inicio'),
+    path('nosotros/', views.nosotros, name='nosotros'),
+    path('productos/', views.productos, name='productos'),
+    path('contacto/', views.contacto, name='contacto'),
+
 
 ]

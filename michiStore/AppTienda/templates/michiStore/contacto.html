@@ -1,5 +1,8 @@
-{% extends 'michiStore/base.html' %} {% block title %}Contacto{% endblock title
-%} {% block main %}
+{%extends 'base.html'%}{%block title%}Contacto{%endblock title%}
+
+<!-- contenido contacto -->
+
+{% block main %}
 
 <section class="contacto">
   <h2 class="contacto__h2">Contacto</h2>
@@ -11,7 +14,7 @@
   <div class="contacto__div">
     <img
       class="contacto__div--img"
-      src='{% static "../../static/AppTienda/assets/img/mailcat.jpg" %}'
+      src="../../static/AppTienda/assets/img/mailcat.jpg"
       alt="arroba"
     />
     <div class="contacto__div--seccion">
@@ -42,7 +45,7 @@
     </div>
     <img
       class="contacto__div--img"
-      src='{% static "../../static/AppTienda/assets/img/contacto.jpg" %}'
+      src="../../static/AppTienda/assets/img/contacto.jpg"
       alt="gato espalda"
     />
   </div>

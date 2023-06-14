@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from AppTienda.models import Producto
 
 
 def inicio(request):
@@ -23,5 +24,10 @@ def busqueda_productos(request):
 
 
 def buscar(request):
-    msj = "Articulo buscado: %r" % request.GET["prod"]
+    if request.GET["prod"]:
+        producto = request.GET["prod"]
+        articulos = Producto.objects.filter(title__icontains=producto)
+        return render(request, "detalleProducto.html", {"productos": articulos, "query": producto})
+    else:
+        msj = "Introduce un campo valido"
     return HttpResponse(msj)

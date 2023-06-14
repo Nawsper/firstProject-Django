@@ -1,0 +1,19 @@
+{%extends 'base.html'%}{%block title%}Productos detalles{%endblock title%}
+
+<!-- contenido detalle producto -->
+
+{% block main %}
+
+<div>
+  <p>Resultado de la busqueda:<strong>{{query}}</strong></p>
+  {% if articulos %}
+  <p>Articulos encontrados: {{articulos|length}}</p>
+  <ul>
+    {% for articulo in articulos %}
+    <li>{{articulo.title}}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% else %}
+<p>No se encontro producto</p>
+{% endif %} {% endblock main %}

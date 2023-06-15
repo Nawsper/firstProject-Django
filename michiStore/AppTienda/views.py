@@ -27,7 +27,7 @@ def buscar(request):
     if request.GET["prod"]:
         producto = request.GET["prod"]
         articulos = Producto.objects.filter(title__icontains=producto)
-        return render(request, "detalleProducto.html", {"productos": articulos, "query": producto})
+        return render(request, "detalleProducto.html", {"articulos": articulos, "query": producto})
     else:
         msj = "Introduce un campo valido"
     return HttpResponse(msj)

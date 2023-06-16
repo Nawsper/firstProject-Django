@@ -26,8 +26,17 @@ def busqueda_productos(request):
 def buscar(request):
     if request.GET["prod"]:
         producto = request.GET["prod"]
-        articulos = Producto.objects.filter(title__icontains=producto)
-        return render(request, "detalleProducto.html", {"articulos": articulos, "query": producto})
+        if len(producto) > 20:
+            msj = "Maximo 20 caracteres"
+        else:
+            articulos = Producto.objects.filter(title__icontains=producto)
+            return render(request, "detalleProducto.html", {"articulos": articulos, "query": producto})
     else:
         msj = "Introduce un campo valido"
     return HttpResponse(msj)
+
+
+def contacto(request):
+    if request.method == "POST":
+        return render(request, "formEnviado.html")
+    return render(request, "contacto.html")

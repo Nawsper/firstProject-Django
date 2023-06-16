@@ -101,7 +101,7 @@ a {
 }
 
 .nosotros {
-  color: var(--bgColor5);
+  color: var(--bgColor3);
 }
 
 .productos {
@@ -416,22 +416,12 @@ a {
 }
 
 .footer__h6 {
-  font-size: 300px;
+  font-size: 30px;
 }
 
 .footer__link {
-  color: #ffffff;
-  font-size: 10rem; }
+  color: var(--fontDark);
+}
 
 .footer__link:hover {
   opacity: 0.65; }
-
-
-.footer__link:hover {
-  opacity: 0.5;
-}
-
-.footer__h2--probando{
-  font-family: 200px;
-  color: #fc2bbd;
-}

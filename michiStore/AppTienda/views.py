@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from AppTienda.models import Producto, Cliente
-from AppTienda.forms import NuevoUsuario
+from AppTienda.models import Producto, Cliente, Pedido
+from AppTienda.forms import NuevoUsuario, NuevoPedido, NuevoProducto
 
 
 def inicio(request):
@@ -55,3 +55,33 @@ def nuevoUsuario(request):
     else:
         newUser = NuevoUsuario()
     return render(request, "registro.html", {"newUser": newUser})
+
+
+def nuevoPedido(request):
+    if request.method == 'POST':
+        nuevoPedidoForm = NuevoPedido(request.POST)
+        if nuevoPedidoForm.is_valid():
+            infoPedido = nuevoPedidoForm.cleaned_data
+            pedido = Pedido(
+                number=infoPedido['Numero'], date=infoPedido['Fecha'], sent=infoPedido['Enviado'])
+            pedido.save()
+            return render(request, "formEnviado.html")
+    else:
+        nuevoPedidoForm = NuevoPedido()
+    return render(request, "registroPedido.html", {"nuevoPedidoForm": nuevoPedidoForm})
+
+
+def nuevoProducto(request):
+    if request.method == 'POST':
+        nuevoProductoForm = NuevoProducto(request.POST)
+        if nuevoProductoForm.is_valid():
+            infoProducto = nuevoProductoForm.cleaned_data
+            producto = Producto(
+                title=infoProducto['Titulo'], price=infoProducto['Precio'],
+                category=infoProducto['Categoria'], description=infoProducto['Descripcion'],
+                stock=infoProducto['Stock'])
+            producto.save()
+            return render(request, "formEnviado.html")
+    else:
+        nuevoProductoForm = NuevoProducto()
+    return render(request, "registroProducto.html", {"nuevoProductoForm": nuevoProductoForm})

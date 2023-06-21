@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Registro Producto{% endblock title %}
+
+{% block main %}
+
+{% if nuevoProductoForm.errors %}
+    <p style="color: red;">Los datos en el formulario no son correctos</p>
+{% endif %}
+<h2>Registra un producto</h2>
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{ nuevoProductoForm.as_table }}
+    </table>
+    <input type="submit" value="Enviar">
+</form>
+
+{% endblock main %}

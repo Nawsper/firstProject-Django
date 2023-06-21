@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title%}MichiStore-Blog{%endblock title %}
+
+<!-- contenido blog -->
+
+{% block main %}
+
+<div class="blog">
+  <img
+    class="blog__img"
+    src="{% static 'AppTienda/assets/img/bigotes.jpg' %}"
+    alt="patas de gato"
+  />
+  <div class="blog__container">
+    <h2 class="blog__container--h2">El Michi Blog</h2>
+    <p class="blog__container--p">
+      ¡Déjanos tus comentarios y opiniones!
+    </p>
+    {% for entradas in entradas %}
+    <div>
+      <img src="{{entradas.img.url}}" alt="">
+      <h4>{{entradas.title}}</h4>
+      <p>{{entradas.content}}</p>
+      <p>{{entradas.author}}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock main %}

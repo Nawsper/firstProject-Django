@@ -106,7 +106,6 @@ a {
 
 .productos {
   color: var(--bgColor4);
-  background-color: var(--fontDark);
   cursor: pointer;
   border-color: transparent;
 }
@@ -209,7 +208,6 @@ a {
 
 .productos {
   width: 95%;
-  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -217,6 +215,13 @@ a {
   color: var(--bgColor3);
   font-family: "Roboto", sans-serif;
   font-size: 4rem;
+}
+
+.productos__div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 /* card */

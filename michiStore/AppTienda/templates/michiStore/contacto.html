@@ -1,8 +1,8 @@
-{%extends 'base.html'%}
+{%extends 'base.html'%} 
 
-{% load static %}
+{% load static %} 
 
-{%block title%}Contacto{%endblock title%}
+{%block title%}MichiStore-Contacto{%endblock title%}
 
 <!-- contenido contacto -->
 
@@ -12,8 +12,9 @@
   <h2 class="contacto__h2">Contacto</h2>
   <p class="contacto__p">
     Si tienes alguna duda o sugerencia, no dudes en contactarnos. Podes hacerlo
-    a través de nuestro correo electrónico, Whatsapp, redes sociales o dejanos un mesajito aca y te contactamos. También
-    podes acercarte a nuestras sucursales para ver todos nuestros productos.
+    a través de nuestro correo electrónico, Whatsapp, redes sociales o dejanos
+    un mesajito aca y te contactamos. También podes acercarte a nuestras
+    sucursales para ver todos nuestros productos.
   </p>
   <div class="contacto__div">
     <img
@@ -61,14 +62,32 @@
         <div class="contacto__form--div">
           <legend>Contactanos</legend>
           <label for="nombre" class="contacto__form--div--lbl">Nombre: </label>
-          <input type="text" class="contacto__form--div--inp" name="nombre" id="nombre" placeholder="Nombre" />
-          <label for="apellido" class="contacto__form--div--lbl">Apellido: </label>
-          <input type="text" class="contacto__form--div--inp" name="apellido" id="apellido" placeholder="Apellido"/>                    
-          <label for="email" class="contacto__form--div--lbl">Email: </label>
-          <input type="email" class="contacto__form--div--inp" name="email" id="email" placeholder="Email" />
-          <label for="contacto__form--div--lbl">
-          Tipo de evento:                      
+          <input
+            type="text"
+            class="contacto__form--div--inp"
+            name="nombre"
+            id="nombre"
+            placeholder="Nombre"
+          />
+          <label for="apellido" class="contacto__form--div--lbl"
+            >Apellido:
           </label>
+          <input
+            type="text"
+            class="contacto__form--div--inp"
+            name="apellido"
+            id="apellido"
+            placeholder="Apellido"
+          />
+          <label for="email" class="contacto__form--div--lbl">Email: </label>
+          <input
+            type="email"
+            class="contacto__form--div--inp"
+            name="email"
+            id="email"
+            placeholder="Email"
+          />
+          <label for="contacto__form--div--lbl"> Tipo de evento: </label>
           <select class="contacto__form--div--select" name="asunto" id="asunto">
             <option value="alimentos">Alimentos</option>
             <option value="accesorios">Accesorios</option>
@@ -80,17 +99,39 @@
         <br />
         <div class="contacto__form--msj">
           <div class="contacto__form--msj--div">
-            <label class="contacto__form--msj--div-lbl" for="mensaje">Dejanos un mensaje:</label>
-            <textarea class="contacto__form--msj--div-txt" name="mensaje" id="mensaje" cols="30" rows="10"></textarea>
+            <label class="contacto__form--msj--div-lbl" for="mensaje"
+              >Dejanos un mensaje:</label
+            >
+            <textarea
+              class="contacto__form--msj--div-txt"
+              name="mensaje"
+              id="mensaje"
+              cols="30"
+              rows="10"
+            ></textarea>
             <div class="contacto__form--msj--div-check">
-              Recibir email con novedades<input class="form-check-input" type="checkbox" name="acepta" id="acepta" value="acepta"/>
-            </div>                    
+              Recibir email con novedades<input
+                class="form-check-input"
+                type="checkbox"
+                name="acepta"
+                id="acepta"
+                value="acepta"
+              />
+            </div>
           </div>
-          <br>
-          <input type="reset" class="contacto__form--msj--inp" value="Limpiar" />
-          <input type="submit" class="contacto__form--msj--inp" value="Enviar" />
-        </div>    
-      </fieldset>  
+          <br />
+          <input
+            type="reset"
+            class="contacto__form--msj--inp"
+            value="Limpiar"
+          />
+          <input
+            type="submit"
+            class="contacto__form--msj--inp"
+            value="Enviar"
+          />
+        </div>
+      </fieldset>
     </form>
   </div>
 </section>

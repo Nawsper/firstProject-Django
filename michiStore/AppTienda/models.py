@@ -20,6 +20,8 @@ class Producto(models.Model):
     category = models.CharField(max_length=15)
     description = models.TextField(default='Descripción no disponible')
     stock = models.IntegerField(default=0)
+    img = models.ImageField(upload_to='productos',
+                            default='AppTienda/assets/img/default.jpg')
 
     def __str__(self):
         return self.title

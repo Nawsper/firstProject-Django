@@ -55,83 +55,17 @@
     />
   </div>
   <div>
+    {% if "enviado" in request.GET %}
+      <h2>¡Formulario enviado con éxito!</h2>
+      <p>Tu mensaje ha sido enviado correctamente. Gracias por contactarnos.</p>
+    {%endif%}
     <h2>Dejanos un mensajito</h2>
     <form class="contacto__form" action="/contacto/" method="post">
       {% csrf_token %}
-      <fieldset>
-        <div class="contacto__form--div">
-          <legend>Contactanos</legend>
-          <label for="nombre" class="contacto__form--div--lbl">Nombre: </label>
-          <input
-            type="text"
-            class="contacto__form--div--inp"
-            name="nombre"
-            id="nombre"
-            placeholder="Nombre"
-          />
-          <label for="apellido" class="contacto__form--div--lbl"
-            >Apellido:
-          </label>
-          <input
-            type="text"
-            class="contacto__form--div--inp"
-            name="apellido"
-            id="apellido"
-            placeholder="Apellido"
-          />
-          <label for="email" class="contacto__form--div--lbl">Email: </label>
-          <input
-            type="email"
-            class="contacto__form--div--inp"
-            name="email"
-            id="email"
-            placeholder="Email"
-          />
-          <label for="contacto__form--div--lbl"> Tipo de evento: </label>
-          <select class="contacto__form--div--select" name="asunto" id="asunto">
-            <option value="alimentos">Alimentos</option>
-            <option value="accesorios">Accesorios</option>
-            <option value="cuchas">Cuchas</option>
-            <option value="juguetes">Juguetes</option>
-            <option value="otros">Otros</option>
-          </select>
-        </div>
-        <br />
-        <div class="contacto__form--msj">
-          <div class="contacto__form--msj--div">
-            <label class="contacto__form--msj--div-lbl" for="mensaje"
-              >Dejanos un mensaje:</label
-            >
-            <textarea
-              class="contacto__form--msj--div-txt"
-              name="mensaje"
-              id="mensaje"
-              cols="30"
-              rows="10"
-            ></textarea>
-            <div class="contacto__form--msj--div-check">
-              Recibir email con novedades<input
-                class="form-check-input"
-                type="checkbox"
-                name="acepta"
-                id="acepta"
-                value="acepta"
-              />
-            </div>
-          </div>
-          <br />
-          <input
-            type="reset"
-            class="contacto__form--msj--inp"
-            value="Limpiar"
-          />
-          <input
-            type="submit"
-            class="contacto__form--msj--inp"
-            value="Enviar"
-          />
-        </div>
-      </fieldset>
+      <table>
+        {{ form.as_table }}        
+      </table>
+      <input type="submit" class="contacto__form--msj--inp" value="Enviar" />
     </form>
   </div>
 </section>

@@ -4,7 +4,7 @@
 
 {% block title%}MichiStore-Blog{%endblock title %}
 
-<!-- contenido blog -->
+<!-- contenido categorias del blog -->
 
 {% block main %}
 <section>
@@ -28,14 +28,15 @@
       </div>
       {% endfor %}
     </div>
-    <div>
       <h4>Categorías:</h4>
-      {% for categoria in categorias_set %}
+      {% for entrada in entradas %}
+        {% for categoria in entrada.category.all %}
         <ul>
-          <a href="{% url 'categoria' categoria.id %}">{{categoria.name}}</a>
+         <a href="{% url 'categoria' categoria.id %}">{{categoria.name}}</a>          
         </ul>
+        {% endfor %}
       {% endfor %}
-    </div>    
+    </div>
   </div>
 </section>
 

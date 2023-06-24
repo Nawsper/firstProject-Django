@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from AppTienda.models import Producto
+from .forms import FormContacto
 
 
 def inicio(request):
@@ -16,4 +17,17 @@ def productos(request):
 
 
 def contacto(request):
-    return render(request, "contacto.html")
+    if request.method == 'POST':
+        form = FormContacto(request.POST)
+        if form.is_valid():
+            name = request.POST.get("name")
+            lastname = request.POST.get("lastname")
+            email = request.POST.get("email")
+            content = request.POST.get("content")
+            message = request.POST.get("message")
+            accept = request.POST.get("accept")
+            return redirect("/contacto/?enviado")
+    else:
+        form = FormContacto()
+
+    return render(request, 'contacto.html', {'form': form})

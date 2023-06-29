@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 
@@ -14,20 +15,35 @@ class Cliente(models.Model):
         return self.name
 
 
-class Producto(models.Model):
-    title = models.CharField(max_length=100)
-    price = models.IntegerField()
-    category = models.CharField(max_length=15)
-    description = models.TextField(default='Descripción no disponible')
-    stock = models.IntegerField(default=0)
-    img = models.ImageField(upload_to='productos',
-                            default='AppTienda/assets/img/default.jpg')
-
-    def __str__(self):
-        return self.title
-
-
 class Pedido(models.Model):
     number = models.IntegerField()
     date = models.DateField()
     sent = models.BooleanField()
+
+
+class CategoriaProd(models.Model):
+    name = models.CharField(max_length=30)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "categoryProd"
+        verbose_name_plural = "categoriesProd"
+
+    def __str__(self):
+        return self.name
+
+
+class Producto(models.Model):
+    title = models.CharField(max_length=100)
+    price = models.IntegerField()
+    category = models.ForeignKey('CategoriaProd', on_delete=models.CASCADE)
+    description = models.TextField(default='Descripción no disponible')
+    stock = models.IntegerField(default=0)
+    img = models.ImageField(upload_to='productos',
+                            default='AppTienda/assets/img/default.jpg')
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title

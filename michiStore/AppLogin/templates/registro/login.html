@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}MichiStore-Registro{% endblock title %}
+
+<!-- contenido registro -->
+
+{% block main %}
+
+<form method="post" action="">
+    {% csrf_token %}
+
+    <div>
+        <div>
+
+            {% if messages %}
+
+            {% for mensaje in messages %}
+
+            <span>
+
+                {{mensaje}}
+
+            </span>
+
+            {% endfor %}
+
+            {% endif %}
+
+        </div>
+        <br>
+        <br>
+
+        {{form}}
+
+        <button type="submit">Ingresar</button>
+
+    </div>
+
+</form>
+
+{% endblock main %}

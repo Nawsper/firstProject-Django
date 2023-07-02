@@ -110,6 +110,10 @@ a {
   border-color: transparent;
 }
 
+.blog {
+  color: var(--bgColor2);
+}
+
 .contacto {
   color: var(--bgColor5);
 }

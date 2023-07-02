@@ -58,6 +58,25 @@
         </nav>
       </div>
     </header>
+    <div>
+      {% if user.is_authenticated %}
+
+      <h2>¡Hola {{ user.username }}!</h2>
+      <a href="{% url 'logout' %}">Cerrar sesión</a>
+
+      {% else %}
+
+      <div>
+        <a href="{% url 'loguear' %}">Login</a>
+      </div>
+
+      <div>
+        <a href="{% url 'login' %}">Registrarse</a>
+      </div>
+
+
+      {% endif %}
+    </div>
     <!-- main -->
     <main>{% block main %} {% endblock main %}</main>
     <!-- footer -->

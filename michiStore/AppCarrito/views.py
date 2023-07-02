@@ -41,3 +41,7 @@ def cleanCarrito(request):
     carrito = Carrito(request)
     carrito.cleanCarrito()
     return render(request, "carrito/carrito.html")
+
+
+def envio(request):
+    return render(request, "carrito/finalCompra.html")

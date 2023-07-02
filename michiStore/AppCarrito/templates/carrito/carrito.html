@@ -34,7 +34,7 @@
     <div>
         <small>Total: </small>
         <p>$ {{ precioTotalCarrito }}</p>
-        <button>Finalizar compra</button>
+        <a href="{% url 'carrito:envio' %}">Finalizar compra</a>
     </div>
     {% else %}
     <div>

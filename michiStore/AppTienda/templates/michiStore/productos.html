@@ -8,16 +8,21 @@
 
 {% block main %}
 
-<div class="productos">    
-  <h2 class="productos__h2">MichiProductos</h2>
+<div class="productos">
+  <div>
+    <h2 class="productos__h2">MichiProductos</h2>
+    <a class="productos__carrito" href="{% url 'carrito:carrito' %}">
+      <i class="fa-solid fa-cart-shopping"></i> {{ cantTotalCarrito }}
+    </a>
+  </div>
   <div class="productos__div">
     {% for producto in productos %}
     <div class="card">
-      <img class="card__img" src="{{producto.img.url}}" alt="foto producto" />
-      <h5 class="card__h5">{{producto.title}}</h5>
-      <p class="card__price">$ {{producto.price}}</p>
-      <p class="card__stock">Stock: {{producto.stock}}</p>
-      <a class="card__button"> Ver detalles </a>
+      <img class="card__img" src="{{ producto.img.url }}" alt="foto producto" />
+      <h5 class="card__h5">{{ producto.title }}</h5>
+      <p class="card__price">$ {{ producto.price }}</p>
+      <p class="card__stock">Stock: {{ producto.stock }}</p>
+      <a class="card__button" href="{% url 'carrito:agregar' producto.id %}">Agregar al carrito</a>
     </div>
     {% endfor %}
   </div>

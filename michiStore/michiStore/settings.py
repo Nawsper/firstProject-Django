@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'AppTienda',
     'AppBlog',
+    'AppCarrito',
 ]
 
 MIDDLEWARE = [
@@ -66,6 +67,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'AppCarrito.context_processor.precioTotalCarrito',
+                'AppCarrito.context_processor.cantTotalCarrito'
             ],
         },
     },

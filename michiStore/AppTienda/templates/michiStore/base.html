@@ -1,109 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    {% load static %}
-    <meta charset="UTF-8" />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="{% static 'AppTienda/assets/img/favicon.png' %}"
-    />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Font Awesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="{% static 'AppTienda/assets/img/favicon.png' %}" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alkatra&family=Roboto:wght@400;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- css -->
-    <link href="{% static 'AppTienda/css/style.css' %}" rel="stylesheet" />
-    <title>{% block title %}{% endblock title %}</title>
-  </head>
-  <body>
-    <div class="container">
-      <!-- header -->
-      <header class="header">
-        <div class="header__div">
-          <img class="header__div--presentacion" src="{% static 'AppTienda/assets/img/presentacion.png' %}" alt="bigotes gato" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alkatra&family=Roboto:wght@400;700;900&display=swap"
+    rel="stylesheet" />
+  <!-- css -->
+  <link href="{% static 'AppTienda/css/style.css' %}" rel="stylesheet" />
+  <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- header -->
+    <header class="header">
+      <div class="header__div">
+        <img class="header__div--presentacion" src="{% static 'AppTienda/assets/img/presentacion.png' %}"
+          alt="bigotes gato" />
+      </div>
+      <!-- navbar -->
+      <div class="header__nav">
+        <div class="header__nav--div">
+          <img class="header__nav--div__logo" src="{% static 'AppTienda/assets/img/logo.png' %}" alt="logo" />
+          <h1>
+            <a class="header__nav--div__h1" href="{% url 'inicio' %}">Michi Shop</a>
+          </h1>
         </div>
-        <!-- navbar -->
-        <div class="header__nav">
-          <div class="header__nav--div">
-            <img
-              class="header__nav--div__logo"
-              src="{% static 'AppTienda/assets/img/logo.png' %}"
-              alt="logo"
-            />
-            <h1>
-              <a class="header__nav--div__h1" href="{% url 'inicio' %}"
-                >Michi Shop</a
-              >
-            </h1>
+        <nav class="header__nav--menu">
+          <ul class="header__nav--menu__ul">
+            <li>
+              <a class="header__nav--menu__ul--li inicio" href="{% url 'inicio' %}">Inicio</a>
+            </li>
+            <li>
+              <a class="header__nav--menu__ul--li nosotros" href="{% url 'nosotros' %}">Nosotros</a>
+            </li>
+            <li>
+              <a class="header__nav--menu__ul--li productos" href="{% url 'productos' %}">Productos</a>
+            </li>
+            <li>
+              <a class="header__nav--menu__ul--li blog" href="{% url 'blog' %}">Blog</a>
+            </li>
+            <li>
+              <a class="header__nav--menu__ul--li contacto" href="{% url 'contacto' %}">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- main -->
+    <main>{% block main %} {% endblock main %}</main>
+    <!-- footer -->
+    <footer>
+      <div class="footer">
+        <!-- Iconos Contacto -->
+        <div class="footer__div">
+          <div class="footer__titulos">
+            <h6 class="footer__h6">Seguinos en nuestras Redes Sociales</h6>
+            <a class="footer__link" href="#" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+            <a class="footer__link" href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a class="footer__link" href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a>
           </div>
-          <nav class="header__nav--menu">
-            <ul class="header__nav--menu__ul">
-              <li>
-                <a
-                  class="header__nav--menu__ul--li inicio"
-                  href="{% url 'inicio' %}"
-                  >Inicio</a
-                >
-              </li>
-              <li>
-                <a
-                  class="header__nav--menu__ul--li nosotros"
-                  href="{% url 'nosotros' %}"
-                  >Nosotros</a
-                >
-              </li>
-              <li>
-                <a
-                  class="header__nav--menu__ul--li productos"
-                  href="{% url 'productos' %}"
-                  >Productos</a
-                >
-              </li>
-              <li>
-                <a
-                  class="header__nav--menu__ul--li blog"
-                  href="{% url 'blog' %}"
-                  >Blog</a
-                >
-              </li>
-              <li>
-                <a
-                  class="header__nav--menu__ul--li contacto"
-                  href="{% url 'contacto' %}"
-                  >Contacto</a
-                >
-              </li>
-            </ul>
-          </nav>
         </div>
-      </header>
-      <!-- main -->
-      <main>{% block main %} {% endblock main %}</main>
-      <!-- footer -->
-      <footer>
-        <div class="footer">
-          <!-- Iconos Contacto -->
-          <div class="footer__div">
-            <div class="footer__titulos">
-              <h6 class="footer__h6">Seguinos en nuestras Redes Sociales</h6>
-              <a class="footer__link" href="#" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
-              <a class="footer__link" href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-              <a class="footer__link" href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-            </div>
-          </div>
-          <p class="footer__p">&copy;2023 MichiShop by Nawsper</p>
-        </div>
-      </footer>
-    </div>
-  </body>
+        <p class="footer__p">&copy;2023 MichiShop by Nawsper</p>
+      </div>
+    </footer>
+  </div>
+</body>
+
 </html>

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}MichiStore-Carrito{% endblock title %}
+
+<!-- contenido productos -->
+
+{% block main %}
+
+<div class="carrito">
+    <h2 class="carrito__titulo">Carrito</h2>
+    {% if request.session.carrito.items %}
+    {% for key, value in request.session.carrito.items %}
+    <p>{{ cantTotalCarrito }} producto/s agregado/s</p>
+    <div id="carrito__prod" class="carrito__prod">
+        <div class="carrito__prod--titulo">
+            <h3>{{ value.title }}</h3>
+        </div>
+        <div class="carrito__prod--cant">
+            <p>Cantidad: {{ value.quantity }}</p>
+        </div>
+        <div class="carrito__prod--subtotal">
+            <small>Subtotal: </small>
+            <p>$ {{ value.price }}</p>
+        </div>
+        <a href="{% url 'carrito:sumar' value.product_id %}">+</a>
+        <a href="{% url 'carrito:eliminar' value.product_id %}">-</a>
+        <a href="{% url 'carrito:quitar' value.product_id %}">Eliminar Producto</a>
+
+    </div>
+    {% endfor %}
+    <a href="{% url 'carrito:limpiar' %}">Limpiar carrito</a>
+    <div>
+        <small>Total: </small>
+        <p>$ {{ precioTotalCarrito }}</p>
+        <button>Finalizar compra</button>
+    </div>
+    {% else %}
+    <div>
+        <h4>No hay productos agregados</h4>
+    </div>
+    {% endif %}
+</div>
+{% endblock main %}
